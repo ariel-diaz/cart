@@ -51,4 +51,32 @@ ul {
   padding: 30px;
   margin-top:15px;
 }
+.menu-ul a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+
+.img-checkout {
+  width: 100px;
+  height: 100px;
+}
+
+.item-checkout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+}
+
+.item-checkout > div {
+  margin-left: 10px;
+}
+
+.boton-borrar {
+  border: 1px solid black;
+  background-color: #fff;
+  padding: 10px;
+}
 

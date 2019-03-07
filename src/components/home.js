@@ -1,6 +1,6 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import Producto from './producto';
-import {Store, Provider} from '../store';
+import {Store} from '../store';
 
 const initialProductos = [
     {
@@ -32,15 +32,23 @@ const initialProductos = [
 
 
   const Home = () => {
-      
     const [productos, setProductos] = useState(initialProductos);
-    const {state, dispatch} = useContext(Store);
+     const { state, dispatch } = useContext(Store);
 
     const addItem = (i) => {
-        console.log(productos);
-        // dispatch({type:'ADD_ITEM', payload: {producto}});
-
+      const producto = productos.find( (_, id) => id === i);
+      dispatch({type:'ADD_ITEM', payload: producto});
     }
+
+    const getData = () => {
+      fetch('../data.json').then(data => console.log(data))
+    }
+
+
+    useEffect(() => {
+      getData();
+    });
+
 
     return (
         <div>
